@@ -8,8 +8,8 @@
 
 | 일수 | 내용 | 블로그 주소 |
 |---|---|---|
-| Day 01 | 개발환경 구성, HellowWorld출력, 자료형 | [day01-1일차](https://velog.io/@noah3521/%EC%B7%A8%EC%97%85%EB%B0%98-1%EC%9D%BC%EC%B0%A8) |
-| Day 02 | 변수, 형변환, 문자열 | [day02-2일차]() |
+| Day 01 | 개발환경 구성, HellowWorld출력, 자료형 | [day01-1일차](https://velog.io/@noah3521/취업반-1일차) |
+| Day 02 | 변수, 형변환, 문자열 | [day02-2일차](https://velog.io/@noah3521/취업반-2일차) |
 | Day 03 | ... | ... |
 | Day 04 | ... | ... |
 | Day 05 | ... | ... |
