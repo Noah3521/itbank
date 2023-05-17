@@ -10,7 +10,7 @@
 |---|---|---|
 | [Day 01](https://github.com/Noah3521/itbnak/tree/main/1주차/day01) | 개발환경 구성, HellowWorld출력, 자료형 | [day01-1일차](https://velog.io/@noah3521/취업반-1일차) |
 | [Day 02](https://github.com/Noah3521/itbnak/tree/main/1주차/day02) | 변수, 형변환, 문자열 | [day02-2일차](https://velog.io/@noah3521/취업반-2일차) |
-| [Day 03](https://github.com/Noah3521/itbnak/tree/main/1주차/day03) | 래퍼클래스, 연산자| [day03-3일차](https://github.com/Noah3521/itbnak/tree/main/1주차/day02) | 변수, 형변환, 문자열 | [day02-2일차](https://velog.io/@noah3521/취업반-3일차) |
+| [Day 03](https://github.com/Noah3521/itbnak/tree/main/1주차/day03) | 래퍼클래스, 연산자| [day03-3일차]([https://velog.io/@noah3521/취업반-3일차)) |
 | Day 04 | ... | ... |
 | Day 05 | ... | ... |
 
