@@ -18,8 +18,8 @@
 
 | 일수 | 내용 | 블로그 주소 |
 |---|---|---|
-| [Day 06](https://github.com/Noah3521/itbnak/tree/main/2주차/day06) | 디버그, 반복문 등 | [day06-6일차](https://velog.io/@noah3521/취업반-6일차)
-| Day 07 | ... | ... |
+| [Day 06](https://github.com/Noah3521/itbnak/tree/main/2주차/day06) | 디버그, whle 등 | [day06-6일차](https://velog.io/@noah3521/취업반-6일차) | 
+| [Day 07](https://github.com/Noah3521/itbnak/tree/main/2주차/day07) | for문, 배열 | [day06-6일차](https://velog.io/@noah3521/취업반-7일차) | 
 | Day 08 | ... | ... |
 | Day 09 | ... | ... |
 | Day 10 | ... | ... |
