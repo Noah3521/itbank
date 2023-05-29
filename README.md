@@ -22,6 +22,11 @@
 | [Day 07](https://github.com/Noah3521/itbnak/tree/main/2주차/day07) | for문, 배열 | [day07-7일차](https://velog.io/@noah3521/취업반-7일차) | 
 | [Day 08](https://github.com/Noah3521/itbnak/tree/main/2주차/day08) | 함수 | [day08-8일차](https://velog.io/@noah3521/취업반-8일차) | 
 | [Day 09](https://github.com/Noah3521/itbnak/tree/main/2주차/day09) | 문자열 | [day09-9일차](https://velog.io/@noah3521/취업반-9일차) | 
-| Day 10 | ... | ... |
+| [Day 09](https://github.com/Noah3521/itbnak/tree/main/2주차/day10) | 다중반복문, 2차원배열 | [day10-10일차](https://velog.io/@noah3521/취업반-10일차) | 
 
+### 3주차
+
+| 일수 | 내용 | 블로그 주소 |
+|---|---|---|
+| [Day 11](https://github.com/Noah3521/itbnak/tree/main/3주차/day11) | 배열, 리스트 | [day11-11일차](https://velog.io/@noah3521/취업반-11일차) | 
 ...
