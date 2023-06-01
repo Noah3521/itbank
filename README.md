@@ -29,4 +29,5 @@
 | 일수 | 내용 | 블로그 주소 |
 |---|---|---|
 | [Day 11](https://github.com/Noah3521/itbnak/tree/main/3주차/day11) | 배열, 리스트 | [day11-11일차](https://velog.io/@noah3521/취업반-11일차) | 
+| [Day 12](https://github.com/Noah3521/itbnak/tree/main/3주차/day12) | 클래스 | [day12-12일차](https://velog.io/@noah3521/취업반-12일차) | 
 ...
