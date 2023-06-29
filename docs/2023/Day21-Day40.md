@@ -9,8 +9,8 @@
 | 일수 | 내용 | 블로그 주소 |
 |---|---|---|
 | [Day 21](https://github.com/Noah3521/itbnak/tree/main/5주차/day21) | 자바 파일입출력 복습 | [day21-21일차](https://velog.io/@noah3521/취업반-21일차) |
-| [Day 22](https://github.com/Noah3521/itbnak/tree/main/5주차/day22) | ... | [day22-22일차](https://velog.io/@noah3521/취업반-22일차) |
-| [Day 23](https://github.com/Noah3521/itbnak/tree/main/5주차/day23) | ... | [day23-23일차](https://velog.io/@noah3521/취업반-23일차) |
+| [Day 22](https://github.com/Noah3521/itbnak/tree/main/5주차/day22) | 오라클리눅스7, 오라클DB 설치 | [day22-22일차](https://velog.io/@noah3521/취업반-22일차) |
+| [Day 23](https://github.com/Noah3521/itbnak/tree/main/5주차/day23) | ojdbc로 자바에서 db데이터 관리하기 | [day23-23일차](https://velog.io/@noah3521/취업반-23일차) |
 | [Day 24](https://github.com/Noah3521/itbnak/tree/main/5주차/day24) | ... | [day24-24일차](https://velog.io/@noah3521/취업반-24일차) |
 | [Day 25](https://github.com/Noah3521/itbnak/tree/main/5주차/day25) | ... | [day25-25일차](https://velog.io/@noah3521/취업반-25일차) |
 

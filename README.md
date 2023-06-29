@@ -5,6 +5,6 @@
 ## 목차
 
 - [01일차-20일차](https://github.com/Noah3521/itbnak/blob/main/docs/2023/Day01-Day20.md)
-- [21일차-40일차](#2023년-7월)
+- [21일차-40일차](https://github.com/Noah3521/itbnak/blob/main/docs/2023/Day21-Day40.md)
 - [2023년 8월](#2023년-8월)
 - [2023년 9월](#2023년-9월)
