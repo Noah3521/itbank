@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-quiz1.html</title>
+
+    <style>
+        p {
+            line-height: 15px;
+            margin-left: 15px;
+        }
+        h1 {
+            padding: 15px;
+            margin: 0;
+        }
+        h2 {
+            margin: 0;
+            padding: 15px;
+        }
+        #wrap {
+            margin: 20px auto;
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid black;
+        }
+        .frame {
+            margin: 25px;
+            border: 1px solid black;
+        }
+        #header {
+            height: 14%;
+            line-height: 75px;
+        }
+        #main {
+            height: 50%;
+            border: none;
+            display: flex;
+        }
+        #main > .box {
+            border: 1px solid black;
+            margin-left: 25px;
+            width: 23%;
+        }
+        #main > .box > ul {
+            margin-top: 0;
+            margin-left: 15px;
+        }
+        #main > #sideL {
+            margin: 0;
+            flex: 1;
+        }
+        #main > #section {
+            flex: 3;
+        }
+        #main > #sideR {
+            flex: 1;
+            height: fit-content;
+            padding-bottom: 15px;
+        }
+        #footer {
+            height: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header" class="frame">
+            <h1>사이트 제목</h1>
+        </div>
+        
+        <div id="main" class="frame">
+            <div id="sideL" class="box">
+                <h2>사이드바</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li> 
+                    <li>JAVAscript</li>
+                </ul>
+            </div>
+
+            <div id="section" class="box">
+                <h2>본문</h2>
+                <p>예비비는 총액으로 국회의 의결을 얻어야 한다. 예비비의 지출은 차기국회의 승인을 얻어야 한다.</p>
+            </div>
+
+            <div id="sideR" class="box">
+                <h2>사이드바</h2>
+                <ul>
+                    <li>항목1</li>
+                    <li>항목2</li> 
+                    <li>항목3</li>
+                    <li>항목4</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="footer" class="frame">
+            <h2>푸터</h2>
+            <p>저작권 정보</p>
+            <p>연락처 등</p>
+        </div>
+    </div>
+</body>
+</html>

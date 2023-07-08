@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #wrap {
+            width: 1080px;
+            margin: auto;
+            border: 2px solid #dadada;
+        }
+        #banner {
+            background-color: #c9c5c5;
+            margin: 0;
+            height: 150px;   
+        }
+        #banner > span {
+            
+        }
+        #banner > h1 {
+            width: fit-content;
+            font-size: 32px;
+            padding: 8px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+        #main {
+            display: flex;
+            height: 350px;
+        }
+        #main > .menu {
+            margin: 0;
+            flex: 1;
+            padding: 0;
+        }
+        .menu > ul {
+            background-color: black;
+            color: white;
+            padding: 0;
+            list-style: none;
+            height: 300px;
+        }
+        .menu > ul > li {
+            margin-left: 0;
+            padding: 15px;
+            padding-bottom: 0;
+        }
+        .content {
+            flex: 4;
+            padding: 15px;
+            margin: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="banner">
+            
+                <h1>LOGO</h1>
+            
+        </div>  
+
+        <div id="main">
+            <div class="menu">
+                <ul>
+                    <li>Menu-1</li>
+                    <li>Menu-2</li>
+                    <li>Menu-3</li>
+                </ul>
+            </div>
+            <div class="content">
+                    <h1>Hello World</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aut omnis est at impedit beatae, quam quisquam, praesentium eligendi tenetur molestias minus sequi laboriosam recusandae? Soluta fugiat perspiciatis eum illum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est expedita quisquam sint fuga dolorem, neque quasi, explicabo dicta sequi iste optio distinctio. Totam eum fugit deserunt aliquam explicabo similique cum.</p>
+            </div>
+        </div>
+
+        <div id="footer">
+            <hr>
+            <p>♥copy</p>
+        </div>
+    </div>
+</body>
+</html>
