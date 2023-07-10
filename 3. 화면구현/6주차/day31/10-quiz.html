@@ -10,6 +10,7 @@
             height: 555px;
             margin: 40px auto;
             border: 1px solid black;
+            background-color: #D4DFE1;
         }
         #window {
             /* background-color: lightsalmon; */
@@ -88,10 +89,11 @@
         .button > div {            
             height: 54px;
             line-height: 50px;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             border-radius: 5px;
             width: 23.65%;
             text-align: center;
+            margin-top: 2px;
         }
         .first {
             margin-left: 2px;
@@ -99,7 +101,14 @@
         .last {
             margin-right: 2px;
         }
+        .outter {
+            background-color: #E6EBED;
+        }
+        .button > div:not(.outter) {
+            background-color: #F7F8FA;
+        }
     </style>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 <body>
     
@@ -126,21 +135,20 @@
 
         <div id="keys">
             <div class="menu">
-                <div>MC</div>
-                <div>MR</div>
-                <div>M+</div>
-                <div>M-</div>
-                <div>MS</div>
-                <div>M▽</div>
+                <div style="opacity: 0.3;">MC</div>
+                <div style="opacity: 0.3;">MR</div>
+                <div style="font-weight: bold;">M+</div>
+                <div style="font-weight: bold;">M-</div>
+                <div style="font-weight: bold;">MS</div>
+                <div style="opacity: 0.3;">M<i class="las la-angle-down"></i></div>
             </div>
-
             <div class="button">
-                <div class="first">1</div><div>2</div><div>3</div><div class="last">4</div>
-                <div class="first">1</div><div>2</div><div>3</div><div class="last">4</div>
-                <div class="first">1</div><div>2</div><div>3</div><div class="last">4</div>
-                <div class="first">1</div><div>2</div><div>3</div><div class="last">4</div>
-                <div class="first">1</div><div>2</div><div>3</div><div class="last">4</div>
-                <div class="first">1</div><div>2</div><div>3</div><div class="last">4</div>
+                <div class="first outter">%</div><div class="outter">CE</div><div class="outter">C</div><div class="last outter"><i class="las la-backspace" style="font-size: large;"></i></div>
+                <div class="first outter">1/x</div><div class="outter"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mn>2</mn></msup><annotation encoding="text/plain">x squared</annotation></semantics></math></div><div class="outter">2√x</div><div class="last outter"><i class="las la-divide"></i></div>
+                <div class="first" style="font-weight: bold;">7</div><div style="font-weight: bold;">8</div><div style="font-weight: bold;">9</div><div class="last outter">X</div>
+                <div class="first" style="font-weight: bold;">4</div><div style="font-weight: bold;">5</div><div style="font-weight: bold;">6</div><div class="last outter">-</div>
+                <div class="first" style="font-weight: bold;">1</div><div style="font-weight: bold;">2</div><div style="font-weight: bold;">3</div><div class="last outter">+</div>
+                <div class="first" style="font-weight: bold;">1</div><div style="font-weight: bold;">0</div><div style="font-weight: bold;">.</div><div class="last" style="background-color: #7EB5DC; font-size: 30px;">=</div>
             </div>
         </div>
 
