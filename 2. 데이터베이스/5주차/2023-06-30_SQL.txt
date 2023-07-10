@@ -1,0 +1,90 @@
+-- drop sequence
+drop sequence phonebook_seq;
+
+-- drop table
+drop table phonebook CASCADE CONSTRAINTS purge;
+
+-- create sequence
+create sequence phonebook_seq
+    start with 1
+    maxvalue 999999999
+    increment by 1
+    nocache
+    nocycle;
+
+-- create table
+create table phonebook (
+    idx     number          default phonebook_seq.nextval primary key,
+    name    varchar2(100)   not null,
+    age     number          check(0 < age and age < 120),
+    pnum    varchar2(100)   unique not null
+);
+
+-- insert into
+insert into phonebook (name, age, pnum) values ('이지은', 30, '010-1234-1234');
+insert into phonebook (name, age, pnum) values ('홍진호', 41, '010-2222-2222');
+insert into phonebook (name, age, pnum) values ('김지수', 28, '010-2323-3434');
+
+-- selec *
+select * from phonebook order by idx;
+
+
+--------------------------------------------------------------------------------
+
+select * from product;
+
+select max(price) as maxValue from product;
+select min(price) as minValue from product;
+select sum(price) as total from product;
+select avg(price) as average from product;
+select count(*) as cnt from product;
+
+insert into product (name, price, expDate, memo)
+    values ('코카콜라', 1200, '24/06/01', '코카콜라 캔');
+    
+insert into product (name, price, expDate, memo)
+    values ('펩시콜라', 1100, '24/06/01', '펩시콜라 캔');
+    
+insert into product (name, price, expDate, memo)
+    values ('맥콜', 900, '24/06/01', '맥콜 캔');
+    
+insert into product (name, price, expDate, memo)
+    values ('칠성사이다', 1200, '24/06/01', '칠성사이다');
+
+select expDate, max(price) from product
+    group by expDate;
+
+select * from product;
+
+SELECT PRICE FROM PRODUCT;
+
+SELECT DISTINCT PRICE FROM PRODUCT;
+
+SELECT BANNER FROM V$VERSION;
+
+--------------------------------------------------------------------------------
+
+select * from employees;
+select department_id, max(salary) from employees 
+    group by department_id
+    order by max(salary) desc;
+    
+select count(*) from employees where department_id=80;        --107
+select * from departments;      --27
+
+
+select
+    --E.first_name,
+    D.department_id as 부서번호,
+    D.department_name as 부서명,
+    count(E.salary) as 인원수,
+    sum(E.salary) as 월급여
+        from employees E
+        join departments D
+            --on 1=1;             -- 2889
+            on E.department_id = D.department_id
+        group by D.department_name, D.department_id
+        order by 월급여 desc;
+        
+        
+        

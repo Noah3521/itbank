@@ -1,0 +1,95 @@
+
+
+	<Oracle Linux 7.9 64bit - Install Oracle Database 21c XE>
+
+============================================================================================
+rm -rf /etc/sysconfig/network-scripts/ifcfg-ens33
+echo DEVICE=ens33 >> /etc/sysconfig/network-scripts/ifcfg-ens33
+echo BOOTPROTO=static >> /etc/sysconfig/network-scripts/ifcfg-ens33
+echo IPADDR=192.168.1.100 >> /etc/sysconfig/network-scripts/ifcfg-ens33
+echo NETMASK=255.255.255.0 >> /etc/sysconfig/network-scripts/ifcfg-ens33
+echo GATEWAY=192.168.1.2 >> /etc/sysconfig/network-scripts/ifcfg-ens33
+echo ONBOOT=yes >> /etc/sysconfig/network-scripts/ifcfg-ens33
+echo DNS1=168.126.63.1 >> /etc/sysconfig/network-scripts/ifcfg-ens33
+echo DNS2=8.8.8.8 >> /etc/sysconfig/network-scripts/ifcfg-ens33
+
+service network restart && echo OK
+
+yum install java-1.8.0-openjdk-devel.x86_64 -y && javac -version
+
+wget https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackage/oracle-database-preinstall-21c-1.0-1.el7.x86_64.rpm
+yum -y localinstall oracle-database-preinstall-21c-1.0-1.el7.x86_64.rpm
+
+
+wget https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm
+yum -y localinstall oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm
+
+service oracle-xe-21c configure 
+
+============================================================================================
+
+firewall-cmd --permanent --zone=public --add-port=1521/tcp
+firewall-cmd --reload
+firewall-cmd --list-all
+
+rm -rf /home/oracle/prepareAccount.sql
+echo "create user c##itbank identified by it;" >> /home/oracle/prepareAccount.sql
+echo "grant connect, resource, dba to c##itbank;" >> /home/oracle/prepareAccount.sql
+
+echo "" >> /home/oracle/.bash_profile
+echo "### 오라클 실행 환경 변수 설정 ###" >> /home/oracle/.bash_profile
+echo "export ORACLE_HOME=/opt/oracle/product/21c/dbhomeXE" >> /home/oracle/.bash_profile
+echo "export ORACLE_SID=XE" >> /home/oracle/.bash_profile
+echo "export ORAENV_ASK=NO" >> /home/oracle/.bash_profile
+echo "export NLS_LANG=AMERICAN_AMERICA.AL32UTF8" >> /home/oracle/.bash_profile
+echo "export PATH=.:$ORACLE_HOME/bin:$PATH" >> /home/oracle/.bash_profile
+echo oracle | passwd --stdin oracle
+
+su - oracle
+. oraenv
+sqlplus sys/oracle@//localhost:1521/XE as sysdba < /home/oracle/prepareAccount.sql
+
+exit
+
+sed -i '7s/enforcing/disabled/' /etc/selinux/config
+systemctl enable oracle-xe-21c.service && init 6
+
+============================================================================================
+
+잘 설치되었는지 확인
+
+- 먼저 root 계정으로 접속해서 터미널 열기
+
+su - oracle
+. oraenv
+sqlplus c##itbank/it@192.168.1.100:1521/xe
+
+SQL> show user;
+USER is C##ITBANK.
+
+SQL> select banner from v$version;
+Oracle Database 21c Express Edition
+
+SQL> exit
+
+[oracle@localhost ~]# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
