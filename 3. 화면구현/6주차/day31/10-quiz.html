@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 355px;
+            height: 555px;
+            margin: 40px auto;
+            border: 1px solid black;
+        }
+        #window {
+            /* background-color: lightsalmon; */
+            /* border: 1px solid black; */
+            height: 30px;
+            line-height: 30px;
+            display: flex;
+            /* justify-content: space-between; */
+        }
+        .icon {
+            margin-left: 15px;
+        }
+        .title {
+            margin-left: 15px;
+        }
+        .win {
+            display: flex;
+            margin-left: 160px;
+        }
+        .win > div {
+            margin-left: 15px;
+        }
+
+        #nav {
+            /* background-color: aquamarine; */
+            /* border: 1px solid black; */
+            height: 45px;
+            line-height: 45px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #nav > div:first-child {
+            font-size: 20px;
+            margin-left: 15px;
+        }
+        #nav >  div:last-child {
+            font-size: 20px;
+            margin-right: 15px;
+        }
+        #main {
+            /* background-color: lightgreen; */
+            /* border: 1px solid black; */
+            height: 110px;
+            line-height: 140px;
+            font-size: 25px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        #main > h1 {
+            margin: 0;
+            margin-right: 5px;
+            padding: 0;
+        }
+        #keys {
+            /* background-color: lightpink; */
+            /* border: 1px solid black;  */
+        }
+        #keys > .menu {
+            display: flex;
+            justify-content: space-between;
+            /* background-color: aqua; */
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .menu > div {
+            margin: auto;
+        }
+        .button {
+            flex-flow: wrap;
+            display: flex;
+            justify-content: space-between;
+        }
+        .button > div {            
+            height: 54px;
+            line-height: 50px;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 24%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+
+        <div id="window">
+            <div class="icon">🎹</div>
+            <div class="title">계산기</div>
+            <div class="win">
+                <div>ㅡ</div>
+                <div>ㅁ</div>
+                <div>X</div>
+            </div>
+        </div>
+
+        <div id="nav">
+            <div>표준</div>
+            <div>❤</div>
+        </div>
+
+        <div id="main">
+            <h1>0</h1>
+        </div>
+
+        <div id="keys">
+            <div class="menu">
+                <div>MC</div>
+                <div>MR</div>
+                <div>M+</div>
+                <div>M-</div>
+                <div>MS</div>
+                <div>M▽</div>
+            </div>
+
+            <div class="button">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red, .blue {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+            margin: 20px;
+            position: relative;
+        }
+        .red {
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+        .blue {
+            background-color: blue;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>08-z-index.html</h1>
+    <hr>
+
+    <div class="box">
+        <div class="red"  style="z-index: 1;"></div>
+        <div class="blue" style="z-index: 0;"></div>
+    </div>
+    
+    <div class="box">
+        <div class="red"  style="z-index: 2;"></div>
+        <div class="blue" style="z-index: 3;"></div>
+    </div>
+
+
+</body>
+</html>

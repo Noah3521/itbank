@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-position.html</title>
+</head>
+<body>
+
+    <h1>05-position.html</h1>
+    <hr>
+
+    <table border="1" cellpadding="10" cellspacing="0" align="center">
+        <tr>
+            <th>속성</th>
+            <th>기능</th>
+        </tr>
+        <tr>
+            <td>static</td>
+            <td>기본값, 별도의 위치를 지정하지 않고 흐름에 맞게 배치한다</td>
+        </tr>
+        <tr>
+            <td>relative</td>
+            <td>다른 요소의 위치 기준이 될 수 있다. 흐름에 맞게 배치한다</td>
+        </tr>
+        <tr>
+            <td>absolute</td>
+            <td>기준을 중심으로 자신만의 위치를 가진다. 스크롤의 영향은 받는다</td>
+        </tr>
+        <tr>
+            <td>fixed</td>
+            <td>기준을 중심으로 자신만의 위치를 가진다. 스크롤의 영향을 받지 않는다</td>
+        </tr>
+        <tr>
+            <td>sticky</td>
+            <td>평소에는 relative처럼 배치되지만, 기준점에 도달하면 fixed와 같다</td>
+        </tr>
+    </table>
+    
+    <fieldset>
+        <legend>static</legend>
+        <img src="image/danbi.jpg" alt="단비"
+             style="top: 20px;
+                    left: 20px;
+                    position: static;" 
+             height="100">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste rerum quo ullam odit repellat similique molestiae blanditiis tempore quidem voluptate ex culpa neque error cupiditate labore, beatae voluptates numquam.
+    </fieldset>
+    
+
+    
+    <fieldset>
+        <legend>relative</legend>
+        <img src="image/danbi.jpg" alt="단비"
+             style="top: 20px;
+                    left: 20px;
+                    position: relative;" 
+             height="100">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste rerum quo ullam odit repellat similique molestiae blanditiis tempore quidem voluptate ex culpa neque error cupiditate labore, beatae voluptates numquam.
+    </fieldset>
+    
+    <fieldset style="position: relative;">
+        <legend>absolute</legend>
+        <img src="image/danbi.jpg" alt="단비"
+             style="top: 20px;
+                    left: 20px;
+                    position: absolute;" 
+             height="100">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste rerum quo ullam odit repellat similique molestiae blanditiis tempore quidem voluptate ex culpa neque error cupiditate labore, beatae voluptates numquam.
+    </fieldset>
+
+    <fieldset style="position: relative;">
+        <legend>fixed</legend>
+        <img src="image/danbi.jpg" alt="단비"
+             style="top: 20px;
+                    left: 200px;
+                    position: fixed;" 
+             height="100">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste rerum quo ullam odit repellat similique molestiae blanditiis tempore quidem voluptate ex culpa neque error cupiditate labore, beatae voluptates numquam.
+    </fieldset>
+
+    <fieldset style="position: relative;">
+        <legend>sticky</legend>
+        <img src="image/calmdownman.jpg"
+             alt="top: 140px;
+                  left: 300px;
+                  position: sticky;"
+             height="100">
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste rerum quo ullam odit repellat similique molestiae blanditiis tempore quidem voluptate ex culpa neque error cupiditate labore, beatae voluptates numquam.
+    </fieldset>
+
+
+
+</body>
+</html>
