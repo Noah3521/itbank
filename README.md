@@ -6,5 +6,5 @@
 
 - [1. 프로그래밍 언어 활용](https://github.com/Noah3521/itbnak/blob/main/docs/2023/1.프로그래밍%20언어%20활용.md)
 - [2. 데이터베이스 구현](https://github.com/Noah3521/itbnak/blob/main/docs/2023/2.데이터베이스%20구현.md)
-- [2023년 8월](#2023년-8월)
+- [3. 화면 구현](https://github.com/Noah3521/itbnak/blob/main/docs/2023/3.화면구현.md)
 - [2023년 9월](#2023년-9월)
