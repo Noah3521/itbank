@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 2px solid black;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td, th {
+            padding: 5px 10px;
+            border: 1px solid grey;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>02-input.html</h1>
+    <hr>
+
+    <h3>사용자의 입력값을 서버에 전송하기 위한 요소. form과 연계하여 사용한다</h3>
+
+    <table>
+        <tr>
+            <th>태그</th>
+            <th>type</th>
+            <th>특징</th>
+            <th>예시</th>
+        </tr>
+    <td rowspan=10 >input</td>
+    <td>text</td>
+    <td>일반적인 텍스트를 입력받는다</td>
+    <td><input type="text" placeholder="글자 입력"></td>
+        <tr>
+            <td>password</td>
+            <td>마스킹된 텍스트를 입력받는다</td>
+            <td><input type="password" placeholder="비번입력"></td>
+        </tr>
+    <tr>
+        <td>number</td>
+        <td>숫자를 입력받는다
+            2000
+        
+        </td>
+    <tr>
+        <td>date</td>
+        <td>날짜를 입력받는다<td>
+        <td><input type="date"></td>
+    </tr>
+    <tr>
+        <td>range</td>
+        <td>마우스로 범위 사이의 숫자를 입력받는다</td>
+        <td><input type="range"></td>
+    </tr>
+    <tr>
+        <td>file</td>
+        <td>마우스로 첨부파일을 입력받는다</td>
+        <td><input type="file"></td>
+    </tr>
+    <tr>
+        <td>radio</td>
+    <td><input type="radio">여러 요소중 해당하는 값을 복수 선택하여 입력받는다"</td>
+        <td><input type="radio"></td>
+    </tr>
+        <td>checkbox</td>
+    <td><input type="checkbox" name="per_type" value="dog">강아지</td>
+    <td><input type="checkbox" name="per_type" value="dog">고양이</td>
+    <td><input type="checkbox" name="per_type" value="dog">거북이</td>
+    </tr>
+        <td>색상값을 입력받는다</td>
+        <td><input type="coloe"></td>
+        <td><input type="radio"></td>
+    </tr>
+
+    <td colspan="2">select</td>
+    <td>여러 선택지 중 하나를 입력받는닫 (radio와 방식이 유사하다) 
+    <tr>
+        <select name="lang">
+            <option value="" >=== 언어를 선택하세요 </option>></option>
+            <option value="koean" >=== 언어를 선택하세요 </option>></option>
+            <option value="chinese" >=== 언어를 선택하세요 </option>></option>
+            <option value= "placeholder" >=== 언어를 선택하세요 </option>></option>
+    </tr>
+</table>
+
+<tr>
+    
+</tr>
+
+
+    
+</body>
+</html>
