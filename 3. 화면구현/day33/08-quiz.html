@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #wrap {
+            margin: 0 auto;
+            width: 1280px;
+        }
+        .df-gnb-items {
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .df-gnb-items > ul {
+            font-size: 12px;
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .inner-df-content-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+        .inner-df-content-wrap > img {
+            margin-bottom: 0;
+        }
+        .df-gnb-items > ul > li {
+            display: block;
+            height: 41px;
+            line-height: 41px;
+            margin-right: 15px;
+        }
+        #df-logo {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 0;
+        }
+        .search-box {
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 10px;
+        }
+        fieldset {
+            display: flex;
+            position: relative;
+            width: 192.5px;
+            height: 28.5;
+            padding: 0;
+        }
+        fieldset > input {
+            all: unset;
+            margin: auto;
+            width: 160px;
+            padding: 0;
+        }
+        #menu-bar > ul {
+            font-size: 12px;
+            height: 50px;
+            line-height: 50px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        #menu-bar > ul > li {
+            padding: 0;
+            display: block;
+        }
+        #menu-bar img {
+            border: 1px solid grey;
+        }
+        #header, #menu-bar, .df-gnb-items {
+            border-bottom: 1px solid hotpink;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="df-gnb-items">
+                <ul>
+                    <li>LOGIN</li>
+                    <li>JOIN US</li>
+                    <li>CART</li>
+                    <li>ORDER</li>
+                    <li>MY PAGE</li>
+                    <li>BOOKMARK</li>
+                </ul>
+                <ul>
+                    <li>공지사항</li>
+                    <li>이벤트</li>
+                    <li>상품문의</li>
+                    <li>상품후기</li>
+                </ul>
+            </div>
+
+            <div class="inner-df-content-wrap">
+                <div id="df-logo">
+                    <h1>
+                        <img src="https://darles.co.kr/web/upload/NNEditor/20210504/d253c6bdb8c0d68b6bebb1ea4020c1c4.png" width="500px" height="100px">
+                    </h1>
+                    <div class="search-box">
+                        <fieldset>
+                            <input type="text">
+                            🔎
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu-bar">
+            <ul>
+                <li><img src="image/햄버거.png" height="48px"></li>
+                <li>RONA universe</li>
+                <li>남성의류</li>
+                <li>아우터</li>
+                <li>탑</li>
+                <li>드레스</li>
+                <li>바텀</li>
+                <li>악세사리</li>
+            </ul>
+        </div>
+        
+        <div id="main-img">
+            <img src="https://darles.co.kr/web/upload/NNEditor/20210504/0bf1a699ea515735d0841f86daa11cc0.jpg" width="1280px" height="650px">
+        </div>
+        
+    </div>
+</body>
+</html>
