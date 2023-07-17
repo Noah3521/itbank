@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-youtube.html</title>
+    <style>
+        ul, ol {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .df {
+            display: flex;
+        }
+        .header_left {
+            border: 1px solid pink;
+            flex: 2;
+        }
+        .header_center {
+            border: 1px solid blue;
+            flex: 6;
+        }
+        .header_right {
+            border: 1px solid red;
+            flex: 1;
+        }
+
+        main {
+            border: 1px solid black;
+            position: relative;
+        }
+        .category {
+            width: 995px;
+            position: absolute;
+            left: 80px;
+        }
+        .category > li {
+            border: 1px solid orange;
+        }
+        .guide {
+            flex-direction: column;
+            width: max-content;
+            align-items: center;
+            position: absolute;
+            top: 15px;
+        }
+        .guide > li{
+            border: 1px solid aqua;
+        }
+        .content {
+            margin-top: 50px;
+            border: 1px solid darkgreen;
+            margin-left: 120px;
+        }
+
+        .image > img{
+            width: 360px;
+            border-radius: 15px;
+        }
+        .icon > img{
+            display: block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="df">
+        <div class="header_left df">
+            <div class="menuAll">≡</div>
+            <div class="logo">Youtube</div>
+        </div>
+
+        
+        <div class="header_center df">
+            <div class="search df">
+                <div class="search_left">검</div>
+                <div class="search_right">색</div>
+            </div>
+        </div>
+
+        <div class="header_right df">
+            <div class="setting">∵</div>
+            <div class="user">로그인</div>
+        </div>
+    </header>
+
+    <main>
+        <nav>
+            <ul class="category df">
+                <li>전체</li>
+                <li>게임</li>
+                <li>뉴스</li>
+                <li>음악</li>
+                <li>실시간</li>
+                <li>야구</li>
+                <li>축구</li>
+                <li>만화 영화</li>
+                <li>액션 어드벤처 게임</li>
+                <li>요리</li>
+                <li>></li>
+            </ul>
+        </nav>
+        <aside>
+            <ul class="guide df">
+                <li>홈</li>
+                <li>Shorts</li>
+                <li>구독</li>
+                <li>보관함</li>
+                <li>시청 기록</li>
+            </ul>
+        </aside>
+        <div class="contents">
+            <div class="item">
+                <div class="image">
+                    <img src=https://i.ytimg.com/vi/tNeV-mBbzE4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCXzZZH-FIbkpd8AX5G2IgVmUjjYw">
+                </div>
+                <div class="icon">
+                    <img src="https://yt3.ggpht.com/E9HNjYwd0u48VEUMZC_Nld8GObjVoq5FsXR8wSNxipEgIOwY8KJMsIuo0uIaSwr5Vj3nnYB3Ng=s68-c-k-c0x00ffffff-no-rj">
+                </div>
+                <div class="content">
+                    <div class="title">황금메뚜기 | KT vs. DRX 게임2 하이라이트 | 07.16 | 2023 LCK 서머 스플릿</div>
+                    <div class="endpoint">LCK</div>
+                    <div class="views">조회수 21만회</div>
+                    <div class="upload_Date">1일전</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

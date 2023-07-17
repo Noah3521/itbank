@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-danawa.html</title>
+    <style>
+        h1, div {
+            margin: 0;
+            padding: 0;
+        }
+        .df { 
+            display: flex;
+        }
+        .frame {
+            width: 1260px;
+            margin: auto;
+        }
+        ul, ol {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin-left: 10px;
+        }
+        .gnb {
+            border-bottom: 1px solid #dadada;
+            font-size: 12px;
+        }
+        .gnb_inner {
+            justify-content: right;
+        }
+        header {
+            border-bottom: 1px solid #dadada;
+        }
+        .main-header {
+            align-items: center;
+        }
+        .logo {
+            flex: 1;
+        }
+        .search {
+            flex: 3;
+        }
+        .user {
+            flex: 1;
+            justify-content: right;
+        }
+        .search_inner{
+            display: flex;
+            justify-content: center;
+        }
+        .search_inner > input {
+            box-sizing: border-box;
+            width: 480px;
+            height: 50px;
+            padding-left: 15px;
+            border: 1px solid green;
+            border-radius: 5px;
+        }
+        .main-nav {
+            justify-content: space-between;
+            align-items: center;
+        }
+        aside {
+            background-color: #2070EB;
+            color: white;
+        }
+        #main1 > aside {
+            flex: 1;
+        }
+        #main1 > article {
+            flex: 5;
+            padding: 20px;
+        }
+        #main1 nav > ul {
+            position: relative;
+        }
+        #main1 nav > ul > li {
+            padding: 8px;
+        }
+        #main1 nav > ul > li:hover {
+            color: #333;
+            background-color: white;
+            cursor: pointer;
+        }
+        #main1 nav > ul > li > section {
+            position: absolute;
+            top: -16px;
+            left: 203px;
+            width: 500px;
+            height: 456px;
+            background-color: white;
+            display: none;
+            border: 2px solid #2070EB;
+            border-left: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #main1 nav > ul > li:hover > section{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+        danawa.com의 주요 레이아웃을 간단히 구성하고
+        왼쪽 측면의 드랍다운 메뉴부분만 상세히 구현한다
+    -->
+    
+    <header>
+        <div class="gnb">
+            <ul class="gnb_inner df frame">
+                <li>에누리</li>
+                <li>몰테일</li>
+                <li>플레이오토</li>
+                <li>메이크샵</li>
+            </ul>
+        </div>
+        <div class="main-header frame df">
+            <h1 class="logo"><img src="https://img.danawa.com/new/danawa_main/v1/img/danawa_logo_main_brand.png" alt=""></h1>
+            <div class="search">
+                <div class="search_inner">
+                    <input type="text" placeholder="사무실 소모품 구매하면 1만 원을 드려요~!">
+                </div>
+            </div>
+            <ul class="user df">
+                <li>최근</li>
+                <li>관심</li>
+                <li>로그인</li>
+            </ul>
+        </div>
+        <nav class="frame">
+            <ul class="main-nav df">
+                <li><span>≡</span>전체 카테고리</li>
+                <li>조립PC</li>
+                <li>PC견적</li>
+                <li>기업구매상담</li>
+                <li>여행</li>
+                <li>쇼핑기획전</li>
+                <li>DPG</li>
+                <li>이벤트/체험단</li>
+                <li>더보기∨</li>
+                <li><img src="https://orange.contentsfeed.com/RealMedia/ads/Creatives/danawa/jehue_main_top_right_28040/jehue_main_top_right_28040_1.png" alt=""></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="frame">
+        <div id="main1" class="df">
+            <aside>
+                <nav>
+                    <ul>
+                        <li>
+                            가전·TV
+                            <section>
+                                <h3>가전·TV</h3>
+                            </section>
+                        </li>
+                        <li>
+                            컴퓨터·노트북·조립PC
+                            <section>
+                                <h3>컴퓨터·노트북·조립PC</h3>
+                            </section>
+                        </li>
+                        <li>
+                            태블릿·모바일·디카
+                            <section>
+                                <h3>
+                                    태블릿·모바일·디카
+                                </h3>
+                            </section>
+                        </li>
+                        <li>
+                            아웃도어·스포츠·골프
+                            <section>
+                                <h3>
+                                    아웃도어·스포츠·골프
+                                </h3>
+                            </section>
+                        </li>
+                        <li>
+                            자동차·용품·공구
+                            <section>
+                                <h3>
+                                    자동차·용품·공구
+                                </h3>
+                            </section>
+                        </li>
+                        <li>
+                            가구·조명
+                            <section>
+                                <h3>
+                                    가구·조명
+                                </h3>
+                            </section>
+                        </li>
+                        <li>
+                            식품·유아·완구
+                            <section>
+                                <h3>
+                                    식품·유아·완구
+                                </h3>
+                            </section>
+                        </li>
+                        <li>
+                            생활·주방·건강
+                            <section>
+                                <h3>
+                                    생활·주방·건강
+                                </h3>
+                            </section>
+                        </li>
+                        <li>
+                            패션·잡화·뷰티
+                            <section>
+                                <h3>
+                                    패션·잡화·뷰티
+                                </h3>
+                            </section>
+                        </li>
+                        <li>
+                            사무·취미·반려동물
+                            <section>
+                                <h3>
+                                    사무·취미·반려동물
+                                </h3>
+                            </section>
+                        </li>
+                        <li>
+                            여행·항공·호텔
+                            <section>
+                                <h3>
+                                    여행·항공·호텔
+                                </h3>
+                            </section>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <article>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque possimus necessitatibus laudantium, consequuntur ipsam at ut saepe ex eaque quod doloremque provident sed nesciunt voluptates! Nihil consequatur aliquid inventore doloremque.
+            </article>
+        </div>
+        <div id="main2"></div>
+
+    </main>
+
+</body>
+</html>
