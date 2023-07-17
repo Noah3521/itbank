@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <style>
+        h1 {
+            margin: 0;
+        }
+        #header {
+            border: 2px dashed red;
+        }
+        /* flex속성 */
+        .df {
+            display: flex;
+        }
+        /* hedaer warp */
+        .header_inner, .title_con {
+            box-sizing: border-box;
+            margin: auto;
+            width: 1280px;
+        }
+        /* 농협은행 로고 */
+        .logo {
+            display: block;
+            width: 180px;
+            height: 50.75px;
+            background-image: url('https://www.nhbank.com/KO/images/common/logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* 가장 상단 한줄 */
+        .header_top {
+            justify-content: space-between;
+        }
+        /* ul 점 제거 */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .drop li {
+            height: 50.74px;
+            line-height: 50.74px;
+        }
+        .drop > li:last-child {
+            padding-left: 15px;
+        }
+        .nav_bar {
+            font-size: 19px;
+            justify-content: space-between;
+        }
+        .hamburger {
+            display: block;
+            width: 26px;
+            height: 18px;
+            background: url('https://www.nhbank.com/KO/images/common/icon_menuAll.png');
+            line-height: 18px;
+        }
+
+
+        #main {
+            border: 2px dashed black;
+        }
+        .title_emphasis {
+            color: #0055A5;
+            font-weight: bold;  
+        }
+        h2 {
+            color: #1A1818;
+            font-size: 51px;
+            font-weight: 300;  
+        }
+
+        h3 {
+            margin: 0;
+            padding-bottom: 15px;
+            font-size: 30px;
+            color: #0055A5;
+        }
+        .title_con {
+            text-align: center;
+            background-image: url('https://www.nhbank.com/KO/images/main/back1.png, https://www.nhbank.com/KO/images/main/back2.png');
+        }
+
+        .news_img {
+            height: 259.38px;
+            border-radius: 20px;
+        }
+        #main {
+            width: 1280px;
+            margin: auto;
+        }
+
+        #news_wrap{
+            width: 1280px;
+            margin: 50px auto 0;
+            background-color: #0055A5;
+            padding: 2px;
+            border-radius: 15px;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        .news_left {
+            background-color: white;
+            border-radius: 15px;
+            padding: 22px 20px 23px 19px;
+            flex: 8;
+            /* box-shadow: 2px 2px 15px #1A1818; */
+        }
+        .news_right {
+            padding: 95px 60px 75px;
+            margin: 0;
+            color: white;
+            flex: 2;
+        }
+        .news_right > button {
+            /* all: unset; */
+            position: relative;
+            /* background-color: black; */
+            margin-left: 80%;
+            
+        }
+    </style>
+</head>
+<body>
+    <input type="color">
+    <div id="header">
+        <div class="header_inner">
+            <div class="header_top df">
+                <div class="top_logo df">
+                    <h1><span class="logo"></span></h1>
+                </div>
+                <div class="df">
+                    <ul class="drop df">
+                        <li>Language▼</li>
+                        <li>Banking▼</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav df">
+                <ul class="nav_bar df">
+                    <li>은행안내</li>
+                    <li>윤리경영</li>
+                    <li>금융소비자보호</li>
+                    <li>기업지배구조</li>
+                    <li>경영정보</li>
+                    <li>ESG 경영</li>
+                    <li>채용정보</li>
+                    <li>홍보센터</li>
+                </ul>
+                <span class="hamburger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="title_con">
+            <h2>사랑받는 <span class="title_emphasis">일등 민족은행</span></h2>
+            <p class="txt_lgr">농업인과 고객 모두가 행복한 금융을 만들어 갑니다</p>
+        </div>
+
+
+        <div id="news_wrap" class="df">
+            <div class="news_left">
+                <h3>NH 뉴스</h3>
+                <div class="news_left_content df">
+                    <div class="news_con">
+                        <img src="https://www.nhbank.com/upload/nhnews/5937/imgpc_1.jpg" class="news_img">
+                    </div>
+                    <div class="news_txt">
+                        <p class="news_title">NH뉴스</p>
+                        <p class="news_content">NH농협은행, 펀드가입 이벤트 실시</p>
+                        <p class="news_date">2023-07-03</p>
+                    </div>
+                </div>
+            </div>
+            <div class="news_right">
+                <button>더보기 ></button>
+
+                <div class="news_con">
+                    <p class="news_title">NH농협은행, 국민비서 서비스 출시기념 이벤트 ...</p>
+                    <p class="news_date">2023-07-03</p>
+                </div>
+          
+                <div class="news_con">
+                    <p class="news_title">NH농협은행, 농식품분야 성장 지원을 위한 「NH ...</p>
+                    <p class="news_date">2023-07-02</p>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="footer"></div>
+    
+</body>
+</html>
