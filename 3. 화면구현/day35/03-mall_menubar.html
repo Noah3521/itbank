@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-mall_menubar.html</title>
+    <style>
+        ul, ol {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .df {
+            display: flex;
+        }
+        .frame {
+            width: 1120px;
+        }
+        #nav {
+            border-top: 1px solid #dadada;
+            border-bottom: 1px solid #dadada;
+        }
+        .menu_bar {
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            padding: 0 12px;
+            margin: auto;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .menu_bar > li {
+            position: relative;
+        }
+        .menu_bar ol {
+            display: none;
+        }
+        .menu_bar > li >  a {
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .menu_bar > li:first-child {
+            flex: 1;
+        }
+        .menu_bar > li:first-child > a:first-child {
+            display: block;
+            width: 50px;
+            height: 50px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 3em;
+            border: 1px solid #dadada;
+        }
+        .menu_bar > li:nth-child(2) {
+            color: #e16a92;
+        }
+        .menu_bar > li:hover > a{
+            opacity: 0.6;
+        }
+        .menu_bar > li:hover > ol{
+            padding: 8px 0px;
+            margin-top: 1px;
+            position: absolute;
+            display: block;
+            border: 1px solid #dadada;
+            min-width: 158px;
+            /* lefst: -50%; */
+            left: -4px;
+        }
+        ul > li {
+            /* background-color: aqua; */
+            /* border: 1px solid black; */
+            flex: 5;
+        }
+        ol a {
+            color: #2f2f2f;
+            display: block;
+            padding: 6px 20px 6px 14px;
+        }
+        ol a:hover {
+            background-color: #6464641d;
+            color: #111111;
+        }
+        details {
+            width: 1260px; 
+            margin: 50px auto;
+        }
+        fieldset {
+            padding: 20px 5px;
+        }
+        details ol {
+            all: unset;
+            display: block;
+            list-style: decimal;
+            padding-left: 20px;
+        }
+        details li {
+            font-size: 1rem;
+            /* !important : 상속 및 선택자 상세도에 상관없이 무조건 적용 */
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>03-mall_menubar.html</h1>
+    <hr>
+    <div id="nav">
+        <ul class="menu_bar df frame">
+            <li><a href="">≡</a></li>
+            <li><a href="">RONA universe</a></li>
+            <li>
+                <a href="">남성의류</a>
+                <ol>
+                    <li><a href="">아우터</a></li>
+                    <li><a href="">탑</a></li>
+                    <li><a href="">세트</a></li>
+                    <li><a href="">바텀</a></li>
+                    <li><a href="">악세사리</a></li>
+                </ol>
+            </li>
+            <li><a href="">아우터</a></li>
+            <li>
+                <a href="">탑</a>
+                <ol>
+                    <li><a href="">니트</a></li>
+                    <li><a href="">셔츠</a></li>
+                    <li><a href="">블라우스</a></li>
+                    <li><a href="">후드,맨투맨</a></li>
+                    <li><a href="">반팔T</a></li>
+                    <li><a href="">긴팔T</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="">드레스</a>
+                <ol>
+                    <li><a href="">롱/미디</a></li>
+                    <li><a href="">미니</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="">바텀</a>
+                <ol>
+                    <li><a href="">팬츠</a></li>
+                    <li><a href="">스커트</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="">악세사리</a>
+                <ol>
+                    <li><a href="">ER</a></li>
+                    <li><a href="">NC</a></li>
+                    <li><a href="">BC</a></li>
+                    <li><a href="">Etc</a></li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+
+    <details>
+        <summary><b>메뉴 구성 순서</b></summary>
+        <fieldset>
+            <ol type="1">
+                <li>주 메뉴부터 구성한다 (ul, li, flex)</li>
+                <li>서브 메뉴를 한줄만 작성한다</li>
+                <li>주 메뉴와 서브메뉴는 테두리나 배경색으로 보이게 한다</li>
+                <li>서브메뉴의 위치를 지정한다 (absolute, top, left)</li>
+                <li>서브메뉴의 여백 및 정렬, 크기를 지정한다</li>
+                <li>hover를 이용하여 마우스 올리면 나타나도록 처리한다</li>
+            </ol>
+        </fieldset>
+    </details>
+
+
+</body>
+</html>

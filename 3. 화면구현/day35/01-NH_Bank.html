@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>으악</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .sd {
+            box-shadow: 10px 2px 12px 1px rgba(0, 0, 0, .2);  
+        }
+        .df {
+            display: flex;
+        }
+        body {
+            line-height: 1.45;;
+        }
+        h1,h2,h3,h4, span, ul, div,p {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .frame {
+            width: 1280px;
+            margin: auto;
+        }
+        /* 상단바 */
+        h1 {
+            padding-top: 14px;
+        }
+        #header {
+            border-bottom: 1px solid #d6d6d6;
+        }
+        .header_top, .nav {
+            justify-content: space-between;
+        }
+        /* 메인로고 */
+        .logo {
+            /* display: block; */
+            width: 180px;
+            height: 50.75px;
+            background: url('https://www.nhbank.com/KO/images/common/logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* 언어, banking 드롭다운메뉴 */
+        .gnb {
+            align-items: center;
+        }
+        .gnb > li:first-child {
+            margin-right: 25px;
+        }
+        .gnb > li:last-child {
+            margin-left: 25px;
+            color: #0955a5;
+            font-weight: bold;
+        }
+        /* 메뉴바 */
+        .menu {
+            font-size: 19px;
+            padding: 10px 0 13px;
+        }
+        /* 햄버거 */
+        .menuAll {
+            display: block;
+            width: 26px;
+            height: 18px;
+            background: url('https://www.nhbank.com/KO/images/common/icon_menuAll.png');
+        }
+
+        /* 메인화면 배경 */
+        img {
+            z-index: -1;
+        }
+        #main_wrap {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        .title_bg_img01 {
+            position: absolute;
+            top: -10px;
+            right: 50%;
+        }
+        .title_bg_m_img01 {
+            position: absolute;
+            top: 0px;
+            left: -115px;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        .title_bg_img02 {
+            position: absolute;
+            top: -250px;
+            left: 50%;
+        }
+        .title_bg_m_img02 {
+            position: absolute;
+            top: 267px;
+            right: -415px;
+            transform: translate(-50%, -50%);
+            max-width: 398px;
+            display: none;
+        }
+        /* 메인 문구 */
+        .title_con {
+            text-align: center;
+            padding-top: 50px;
+        }
+        h2 {
+            font-size: 72px;
+            font-weight: lighter;
+        }
+        .title_main {
+            color: #0955a5;
+            font-weight: bold;
+        }
+        .title_sub {
+            font-size: 25px;
+            color: #8b8b8b;
+        }
+
+        /* 뉴스 */
+        h3 {
+            font-size: 30px;
+            color: #0955a5;
+        }
+        #news_wrap {
+            position: relative; /* news_wrap 요소를 상대적인 위치로 설정 */
+            background-color: #0955a5;
+            border-radius: 20px;
+            margin: 50px auto;
+        }
+        .news_left,
+        .news_right {
+            width: fit-content;
+            border: 3px solid #0955a5;
+            border-radius: 20px;
+        }
+        .news_left {
+            padding: 22px 20px 23px 19px;
+            background-color: white;
+            flex: 6;
+        }
+        .news_right {
+            color: white;
+            flex: 3;
+            
+        }
+
+        /* 왼쪽뉴스 */
+        .news_left {
+            z-index: 2;
+        }
+        .news_img {
+            height: 260px;
+            border-radius: 15px;
+            z-index: 0;
+            margin-right: 40px;
+        }
+        .news_con {
+            margin: 12px 0 0;
+        }
+        .news_txt {
+            margin-top: 15px;
+        }
+        .news_logo {
+            display: block;
+            font-size: 15px;
+            width: 70px;
+            height: 22px;
+            line-height: 24px;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #0955a5;
+            color: white;
+            margin: 0 0 21px;
+        }
+        .news_title {
+            font-size: 30px;
+            color: #484848;
+            line-height: 1.5;
+        }
+        .news_content {
+            font-size: 14px;
+            line-height: 1.75;
+            font-weight: 600;
+            margin: 24px 0;
+        }
+        .news_date {
+            font-size: 14px;
+            color: #666666;
+            margin-top: 40px;
+        }
+
+        /* 오른쪾 뉴스 */
+        .more {
+            padding: 95px 60px 73px;
+        }
+        .more_title {
+            font-size: 20px;
+            width: 210px;
+        }
+        .more_date {
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        .more_line {
+            margin: 21px 0;
+        }
+        .more_button {
+            all: unset;
+            position: absolute;
+            /* background-color: black; */
+            font-size: 20px;
+            right: 0;
+            top: 0;
+            transform: translate(-50%, 75%);
+        }
+
+        /* 회사정보 */
+        #company {
+            height: 170px;
+            margin-top: 45px;
+            margin-bottom: 45px;
+        }
+        .company_wrap {
+            justify-content: space-between;
+        }
+        .company_wrap {
+            position: relative;
+        }
+        .company_img1 {
+            width: 480px;
+            position: absolute;
+            bottom: 0;
+            right: 51.5%;
+        }
+        .company_img2 {
+            width: 480px;
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+        }
+        .company_box {
+            border: 3px solid #bbcbda;
+            border-radius: 40px;
+            padding: 17px 0 0 25px;
+            height: 147px;
+            width: 585px;
+            min-width: 300px;
+            overflow: hidden;
+        }
+        .company_title, .customer_title {
+            color: #0955a5;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 50px;
+        }
+        .company_content, .company_more, .customer_more {
+            color: #7c7d7e;
+        }
+        .company_content {
+            line-height: 32px;
+        }
+        .company_more, .customer_more {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        /* 고객의 소리 */
+        #customer {
+            border: 3px solid #bbcbda;        
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-sizing: border-box;
+        }
+        .customer_box {
+            padding: 10px 25px;
+            position: relative;
+            border-radius: 20px;
+        }
+        .customer_menu {
+            line-height: 114px;
+            font-size: 18px;
+            color: #7c7d7e;
+        }
+        .customer_more {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        .customer_menu > ul {
+            position: absolute;
+            left: 20%;
+            top: 0;
+            width: 1020px;
+            justify-content: space-between;
+        }
+
+        /* footer */
+        #footer {
+            height: 248px;
+            background-color: #f5f5f5;
+            position: relative;
+        }
+
+        .footer_nav {
+            color: #656565;
+            
+            margin-top: 70px;
+        }
+        .footer_nav > ul:first-child {
+            justify-content: space-between;
+            width: 472px;
+        }
+        .footer_nav p:first-child {
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+        .family {
+            background-color: white;
+            border: 1px solid #cecece;
+            width: 340px;
+            height: 52px;
+            font-size: 18px;
+            line-height: 18px;
+            position: absolute;
+            justify-content: space-between;
+            align-items: center;
+            right: 10px;
+            bottom: 75px;
+        }
+        .family span:first-child{
+            padding-left: 22px;
+        }
+        
+        .family span:last-child{
+            padding-right: 32px;
+            font-size: 10px;
+            line-height: 10px;
+        }
+        .go_top {
+            position:fixed;
+            bottom: 195px;
+            right: 50px;
+        }
+        .sns {
+            width: 154px;
+            justify-content: space-between;
+            position: absolute;
+            right: 160px;
+            bottom: -10px;
+        }
+        .youtube, .instagram, .facebook {
+            display: block;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            color: white;
+            font-size: 24px;
+            line-height: 48px;
+            text-align: center;
+        }
+        .youtube {
+            background-color: #fc0101;
+        }
+        .instagram {
+            background-color: #e33c73;
+        }
+        .facebook {
+            background-color: #1575ea;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .mark {
+            position: absolute;
+            right: 50px;
+            bottom: -16px;
+        }
+        .abs_wrap {
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="header">
+        <!-- 로고, gnb -->
+        <div class="frame">
+            <div class="header_top df">
+                <h1><span class="logo df"></span></h1>
+                <input type="color">
+                <ul class="gnb df">
+                    <li>Language▼</li>
+                    <li>Banking▼</li>
+                </ul>
+            </div>
+            <!-- 메뉴바 -->
+            <div class="menu">
+                <ul class="nav df">
+                    <li>은행안내</li>
+                    <li>윤리경영</li>
+                    <li>금융소비자보호</li>
+                    <li>기업지배구조</li>
+                    <li>경영정보</li>
+                    <li>ESG 경영</li>
+                    <li>채용정보</li>
+                    <li>은행안내</li>
+                    <li><span class="menuAll"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="main_wrap">
+            <!-- 배경 -->
+            <img src="https://www.nhbank.com/KO/images/main/back1.png" alt="" class="title_bg_img01">
+            <img src="https://www.nhbank.com/KO/images/main/mob_back1.png" alt="" class="title_bg_m_img01">
+            <img src="https://www.nhbank.com/KO/images/main/back2.png" alt="" class="title_bg_img02">
+            <img src="https://www.nhbank.com/KO/images/main/mob_back2.png" alt="" class="title_bg_m_img02">
+            
+            <div class="title_con">
+                <h2>사랑받는 <span class="title_main">일등 민족은행</span></h2>
+                <p class="title_sub">농업인과 고객 모두가 행복한 금융을 만들어 갑니다</p>
+            </div>
+            <div id="news_wrap" class="sd df frame">
+                <div class="news_left sd">
+                    <h3>NH 뉴스</h3>
+                    <div class="news_con df">
+                        <img src="https://www.nhbank.com/upload/nhnews/5937/imgpc_1.jpg" class="news_img">
+                        <ul class="news_txt">
+                            <li>
+                                <p class="news_logo">NH뉴스</p>
+                                <p class="news_title">NH농협은행, 펀드가입 이벤트 실시</p>
+                                <p class="news_content">
+                                    NH농협은행, 펀드가입 이벤트 실시
+                                </p>
+                                <p class="news_date">2023-07-03</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="news_right sd">
+                    <button class="more_button">더보기 ></button>
+                    <ul class="more">
+                        <li>
+                            <p class="more_title">NH농협은행, 국민비서 서비스 출시 기념 이벤...</p>
+                            <p class="more_date">2023-07-03</p>
+                        </li>
+                        <li class="more_line">---------------------------------</li>
+                        <li>
+                            <p class="more_title">NH농협은행, 농식품분야 성장 지원을 위한 ⌜NH...</p>
+                            <p class="more_date">2023-07-02</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="company" class="frame">
+                <ul class="company_wrap df">
+                    <li>
+                        <div class="company_box sd">
+                            <img src="https://www.nhbank.com/KO/images/main/green.png" class="company_img1">
+                            <h4 class="company_title">NH농협은행 소개</h4>
+                            <p class="company_content">대한민국의 행복파트너!</p>
+                            <p class="company_more">자세히 보기></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="company_box sd">
+                            <img src="https://www.nhbank.com/KO/images/main/yellow.png" class="company_img2">
+                            <h4 class="company_title">경영정보</h4>
+                            <p class="company_content">경영•재무현황 및 공시자료</p>
+                            <p class="company_more">자세히 보기></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="customer" class="frame">
+                <ul>
+                    <li>
+                        <div class="customer_box df sd">
+                            <div class="customer_text">
+                                <h4 class="customer_title">고객의 소리</h4>
+                                <p class="customer_more">자세히 보기></p>
+                            </div>
+                            <div class="customer_menu">
+                                <ul class="df">
+                                    <li>칭찬/불만/제안/민원</li>
+                                    <li>민원사례(FAQ)</li>
+                                    <li>민원사무편람</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="footer_wrap frame">
+            <div class="footer_left df">
+                <div class="footer_nav">
+                    <ul class="df">
+                        <li>농협인터넷뱅킹</li>
+                        <li>농협중앙회</li>
+                        <li>영업점안내</li>
+                        <li>고객센터</li>
+                        <li>경영공시</li>
+                    </ul>
+                    <ul>
+                        <p>
+                            국내 1661-3000/1522-3000 (인터넷전화가능)해외 82-2-3704-1004 100-707 서울중구 통일로 120 NH농협은행
+                        </p>
+                        <p>
+                            COPYRIGHTS (C) 2021 BY NongHyup.ALL RIGHTS RESERVED.
+                        </P>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="abs_wrap frame">
+            <div class="family df">
+                <span>
+                    계열사/관련사이트
+                </span>
+                <span>▼</span>
+            </div>
+            <ul class="sns df">
+                <li><span class="youtube">►</span></li>
+                <li><span class="instagram">⦿</span></li>
+                <li><span class="facebook">f</span></li>
+            </ul>
+            <div class="mark"><img src="https://www.nhbank.com/KO/images/common/ICON_wa_pc.png"></div>
+            <div class="go_top">
+                <a href="#header">
+                    <img src="https://www.nhbank.com/KO/images/main/top_btn.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
