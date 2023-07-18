@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-hidden_aside_list.html</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            padding-left: 10px;
+        }
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px dashed red;
+            height: 150vh;
+        }
+        #sideBtn {
+            font-size: 2em;
+            position: absolute;
+            left: 10px;
+            top: 170px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            line-height: 36px;
+            text-align: center;
+            user-select: none; /* 선택안됨 */
+        }
+        #sideBtn:hover {
+            background-color: darkgrey;
+            border-radius: 50%;
+        }
+        aside {
+            box-sizing: border-box;
+            width: 300px;
+            height: 100vh;
+            box-shadow: 5px 5px 5px black;
+            position: fixed;
+            background-color: #f5f6f7;
+            top: 0;
+            left: 0;
+            transition-duration: 0.5s;
+        }
+        aside.hidden {
+            left: -350px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>02-hidden_aside_list.html</h1>
+    <hr>
+
+    <header>
+        header
+    </header>
+    
+    <main>
+        main
+    </main>
+
+    <div id="sideBtn">
+        ≡
+    </div>
+
+    <aside id="aside" class="hidden">
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+        
+        <div style="text-align: right; padding-right: 20px;">
+            <button id="closeBtn">닫기</button>
+        </div>
+    </aside>
+
+    <script>
+        // sideBtn을 클릭하면, aside의 class가 hidden 이 사라진다
+        
+        const sideBtn = document.getElementById('sideBtn');
+        const aside = document.getElementById('aside')
+        const closeBtn = document.getElementById('closeBtn')
+
+        sideBtn.onclick = function() {
+            aside.classList.remove('hidden')
+        }
+        // closeBtn을 클릭하면, aside의 class목록에 hidden이 추가된다
+        closeBtn.onclick = function() {
+            aside.classList.add('hidden')
+        }
+
+    </script>
+
+</body>
+</html>
