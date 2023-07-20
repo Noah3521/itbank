@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-input.html</title>
+</head>
+<body>
+
+    <h1>08-input.html</h1>
+    <hr>
+
+    <table>
+        <tr>
+            <td>text</td>
+            <td><input type="text" name="t1" value="Hello"></td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td><input type="password" name="t2" value="wordl"></td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td><input type="date" name="t3" value="1998-12-18"></td>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td><input type="number" name="t4" value="123.4"></td>
+        </tr>
+    </table>
+
+    <script>
+        const t1 = document.querySelector('input[name="t1"]').value
+        const t2 = document.querySelector('input[name="t2"]').value
+        const t3 = document.querySelector('input[name="t3"]').value
+        const t4 = document.querySelector('input[name="t4"]').value
+
+        console.log(t1, typeof(t1))
+        console.log(t2, typeof(t2))
+        console.log(t3, typeof(t3))
+        console.log(t4, typeof(t4))
+        console.log('')
+        console.log(t4.value == 123.4)    // 자료형 변환 없이도 일치여부를 손쉽게 판단할 수 있다
+        console.log(t4.value === 123.4)   // 자료형이 다르기 때문에 === 의 결과는 false 이다
+
+        console.log(' ')
+        console.log('World' > 'wodrld')   // "hello".aompareTo('World')
+        console.log('Hello' < 'world')
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-sort3.html</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+            margin: 20px 0;
+        }
+        td, th {
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        img {
+            width: 120px;
+        }
+
+        #titleBtn, #priceBtn {
+            user-select: none;
+            cursor: pointer;
+        } 
+        #sort > button.hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>11-sort3.html</h1>
+    <hr>
+    <div id="sort">
+        <button id="titleAsc" class="hidden">상품명 오름차순</button>
+        <button id="titleDesc" class="hidden">상품명 내림차순</button>
+        <button id="priceAsc" class="hidden">가격 오름차순</button>
+        <button id="priceDesc" class="hidden">가격 내림차순</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>이미지</th>
+                <th id="titleBtn" class="asc">상품명<span></span></th>
+                <th id="priceBtn" class="asc">가격<span></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="homeplus/1.jpeg" alt=""></td>
+                <td class="title">초록사과 5-8입(봉)</td>
+                <td class="price">9,990원</td>
+            </tr>
+            <tr>
+                <td><img src="homeplus/2.jpeg" alt=""></td>
+                <td class="title">유명산지 사과(충주,문경,거창,영주) 4-6입(봉)</td>
+                <td class="price">12,990원</td>
+            </tr>
+            <tr>
+                <td><img src="homeplus/3.jpeg" alt=""></td>
+                <td class="title">맛이 예쁜 사과 1.8KG(봉)</td>
+                <td class="price">14,990원</td>
+            </tr>
+            <tr>
+                <td><img src="homeplus/4.jpeg" alt=""></td>
+                <td class="title">[착한식탁] 바른 세척 아오리 사과 2kg 꼬마소과</td>
+                <td class="price">10,500원</td>
+            </tr>
+            <tr>
+                <td><img src="homeplus/5.jpeg" alt=""></td>
+                <td class="title">[착한식탁] 바른 세척 아오리 사과 2.5kg 소과</td>
+                <td class="price">13,900원</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="11-sort3.js">
+    </script>
+    
+</body>
+</html>
