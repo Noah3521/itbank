@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-map.html</title>
+    <style>
+        #root {
+            border: 1px solid black;
+            width: 300px;            
+        }
+        #root > div > .row {
+            display: flex;
+        }
+        .row > div {
+            width: 100px;
+            border: 1px solid grey;
+            padding: 10px;
+        }
+        .tableHead > .row > div {
+            text-align: center;
+            font-weight: bold;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>05-map.html</h1>
+    <hr>
+
+    <div id="root">
+        <div class="tableHead">
+        </div>
+        <div class="tableBody">
+        </div>
+    </div>
+
+    <script>
+        const arr = [
+            {name: '원빈', score: 95},
+            {name: '현빈', score: 52},
+            {name: '박현빈', score: 67},
+            {name: '김우빈', score: 50},
+            {name: '임성빈', score: 80},
+        ]
+        const arr2 = arr.map((ob) => {
+            return {
+                name: ob.name,
+                score: ob.score,
+                pass: ob.score < 60 ? '불합격' : '합격'
+            }
+        })
+
+        const tableBody = document.querySelector('.tableBody')
+        const tableHead = document.querySelector('.tableHead')
+        tableHead.innerHTML += '<div class="row"><div class="name">이름</div><div class="score">점수</div><div class="pass">합격여부</div></div>'
+        
+        arr2.forEach((ob) => {
+            let tag = '<div class="row">'
+            tag +=      '<div calss="name">' + ob.name + '</div>'
+            tag +=      '<div calss="score">' + ob.score + '</div>'
+            tag +=      '<div calss="pass">' + ob.pass + '</div>'
+            tag +=    '</div>'
+            
+            tableBody.innerHTML += tag
+        })
+    </script>
+    
+</body>
+</html>

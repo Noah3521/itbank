@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-actorBirth.html</title>
+</head>
+<body>
+
+    <h1>10-actorBirth.html</h1>
+    <hr>
+
+    <div id="sort">
+        <button id="nameBtn" class="asc">이름</button>
+        <button id="birthBtn" class="asc">생일</button>
+    </div>
+
+    <div id="search">
+        <input type="text" id="searchName" placeholder="이름으로 검색">
+        <button id="submitBtn">검색</button>
+    </div>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>생년월일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th colspan="2">
+                    <img src="image/loading.gif" alt="">
+                </th>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script src="actorBirth.js"></script>
+    <script>
+        console.log('arr의 길이 :', arr.length)
+        
+        function load() {
+            const tbody = document.querySelector('tbody')
+            tbody.innerHTML = ''
+
+            let tag = ``
+            arr.forEach((ob) => {
+                tag += '<tr>'
+                tag += `    <td class="name">${ob.name}</td>`
+                tag += `    <td class="birth">${ob.birth}</td>`
+                tag += `</tr>`
+            })
+            tbody.innerHTML += tag
+        }
+        window.onload = load
+
+        // 로드 된 이후 
+        const tbody = document.querySelector('tbody')
+
+        // 이름순 정렬
+        const nameBtn = document.getElementById('nameBtn')
+        nameBtn.onclick = function() {
+            console.log(tbody)
+            const trArray = Array.from(tbody.querySelectorAll('tr'))
+            trArray.sort((a, b) => {
+                const nameA = a.querySelector('.name').innerText
+                const nameB = b.querySelector('.name').innerText
+                return nameA < nameB ? -1 : 1
+            })
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+
+        // 생일순 정렬
+        const birthBtn = document.getElementById('birthBtn')
+        birthBtn.onclick = function() {
+            const trArray = Array.from(tbody.querySelectorAll('tr'))
+            const birthList = tbody.querySelectorAll('.birth').innerText
+            trArray.sort((a, b) => {
+                const birthA = a.querySelector('.birth').innerText.split(' ')
+                const birthB = b.querySelector('.birth').innerText.split(' ')
+                const birthA_parse = new Date(`${birthA[0].replace('년','').padStart(4, '0')}-${birthA[1].replace('월','').padStart(2, '0')}-${birthA[2].replace('일','').padStart(2, '0')}`)
+                const birthB_parse = new Date(`${birthB[0].replace('년','').padStart(4, '0')}-${birthB[1].replace('월','').padStart(2, '0')}-${birthB[2].replace('일','').padStart(2, '0')}`)
+                
+                const asc = birthA_parse < birthB_parse ? -1 : 1
+                const desc = birthA_parse < birthB_parse ? 1 : -1
+                return asc                
+            })
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+        
+        const submitBtn = document.getElementById('submitBtn')
+
+        submitBtn.onclick = function() {
+            const searchName = document.getElementById('searchName').value
+            console.log(searchName)
+            console.log(tbody)
+            
+            const trArray = Array.from(tbody.querySelectorAll('tr'))
+            trArray.sort((a, b) => {
+                const nameA = a.querySelector('.name').innerText
+                const nameB = b.querySelector('.name').innerText
+                return nameA < nameB ? -1 : 1
+            })
+            trArray.filter((tr) => {
+                const name = tr.querySelector('.name')
+                console.log(name)
+                return name.contains(searchName)
+            })
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+
+        
+    </script>
+
+</body>
+</html>
