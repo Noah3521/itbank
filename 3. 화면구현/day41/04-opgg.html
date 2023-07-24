@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opgg</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        td, th {
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        th:hover {
+            cursor: pointer;
+            background-color: lightskyblue;
+        }
+        .블루 {
+            background-color: blue;
+            color: white;
+        }
+        .레드 {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th order="1" class="user">
+                    user<span></span>
+                </th>
+                <th order="1" class="champion">
+                    champion<span></span>
+                </th>
+                <th order="1" class="team">
+                    team<span></span>
+                </th>
+                <th order="1" class="kill">
+                    kill<span></span>
+                </th>
+                <th order="1" class="death">
+                    death<span></span>
+                </th>
+                <th order="1" class="assist">
+                    assist<span></span>
+                </th>
+                <th order="1" class="damage">
+                    damage<span></span>
+                </th>
+                <th order="1" class="cs">
+                    cs<span></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="opgg_result.js"></script>
+    <script>
+        const tbody = document.querySelector('tbody')
+
+        function isNumeric(str) {
+            return !isNaN(str)
+        }
+
+
+        function loadHandler() { 
+            let tag = ''
+            arr.forEach((ob) => {
+                tag += '<tr>'
+                tag += `    <td class="user">${ob.user}</td>`
+                tag += `    <td class="champion">${ob.champion}</td>`
+                tag += `    <td class="team ${ob.team}">${ob.team}</td>`
+                tag += `    <td class="kill">${ob.kill}</td>`
+                tag += `    <td class="death">${ob.death}</td>`
+                tag += `    <td class="assist">${ob.assist}</td>`
+                tag += `    <td class="damage">${ob.damage}</td>`
+                tag += `    <td class="cs">${ob.cs}</td>`
+                tag += `</tr>`
+            })
+            tbody.innerHTML += tag
+        }
+        window.onload = loadHandler
+
+        const thList = document.querySelectorAll('th')
+        function sortHandler(event) {
+            const className = event.target.className
+            const trArray = Array.from(document.querySelectorAll('tbody tr'))                
+            
+            const order = event.target.getAttribute('order')
+            
+            const span = event.target.querySelector('span')
+            
+            span.innerText = +order < 0 ? '🔺' : '🔻'
+
+            trArray.sort((a, b) => {
+                let valueA = a.querySelector('.' + className).innerText
+                let valueB = b.querySelector('.' + className).innerText
+
+                if(isNumeric(valueA) && isNumeric(valueB)) {
+                    valueA = +valueA
+                    valueB = +valueB
+                }
+
+                const result = valueA < valueB ? 1 : -1
+
+                event.target.setAttribute('order', order * -1)
+
+                return result * order
+            })
+            trArray.forEach((tr) => {tbody.appendChild(tr)})
+        }
+        thList.forEach((tr) => tr.onclick = sortHandler)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid grey;
+        }
+
+        th {
+            background-color: lightskyblue;
+            cursor: pointer;
+        }
+
+        th:hover {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>01-homeplus.html</h1>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th order="1" class="name">
+                    상품이름<span></span>
+                </th>
+                <th order="1" class="price">
+                    가격<span></span>
+                </th>
+                <th order="1" class="salesCount">
+                    판매건수<span></span>
+                </th>
+                <th order="1" class="grade">
+                    점수<span></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="homeplus(berry).js"></script>
+    <script>
+        const tbody = document.querySelector('tbody')
+
+        function isNumeric(str) {
+            return !isNaN(str)  // NaN (Not A Number)
+        }
+
+        function loadHandler() {
+            const tbody = document.querySelector('tbody')
+            let tag = ''
+            arr.forEach(ob => {
+                tag += '<tr>'
+                tag += `    <td class="name">${ob.name}</td>`
+                tag += `    <td class="price">${ob.price}</td>`
+                tag += `    <td class="salesCount">${ob.salesCount}</td>`
+                tag += `    <td class="grade">${ob.grade}</td>`
+                tag += '</tr>'
+            })
+            tbody.innerHTML += tag
+        }
+        window.onload = loadHandler
+
+        const thList = document.querySelectorAll('th')
+        function sortHandler(event) {
+            const className = event.target.className
+
+            const order = +event.target.getAttribute('order')
+            alert(order)
+            document.querySelectorAll('thead span').forEach(span => span.innerText = '')
+            const span = event.target.querySelector('span')
+            span.innerText = order > 0 ? '🔺' : '🔻'
+
+            const trArray = Array.from(document.querySelectorAll('tbody > tr'))
+
+            trArray.sort((a, b) => {
+                let valueA = a.querySelector('.' + className).innerText
+                let valueB = b.querySelector('.' + className).innerText
+                if (isNumeric(valueA) && isNumeric(valueB)) {
+                    valueA = +valueA
+                    valueB = +valueB
+                }
+                let result = valueA > valueB ? 1 : -1
+                event.target.setAttribute('order', order * -1)
+                return result * order
+            })
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+        thList.forEach(th => th.onclick = sortHandler)
+    </script>
+
+
+</body>
+
+</html>
