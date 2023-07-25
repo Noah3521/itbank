@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        th, td {
+            border: 1px solid grey;
+            padding: 10px;
+        }
+        th {
+            background-color: darkgray;
+        }
+        th:hover {
+            cursor: pointer;
+            background-color: grey;
+        }
+        #filter {
+            user-select: none;
+            margin: 50px auto;
+            text-align: center;
+        }
+        thead > tr > th:first-child {
+            width: 460px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>04-homeplus.html</h1>
+    
+    <div id="filter">
+        <label><input type="checkbox" id="blueberry">블루베리</label>
+        <label><input type="checkbox" id="strawberry">딸기</label>
+        <label><input type="checkbox" id="cherry">체리</label>
+        <label><input type="checkbox" id="etc">기타</label>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>상품이름</th>
+                <th>카테고리</th>
+                <th>가격</th>
+                <th>평점</th>
+                <th>판매 횟수</th>
+                <th>리뷰 횟수</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="homeplus(berry).js"></script>
+    <script>
+        // 상품 데이터
+        const dataList = arr.map(ob => {
+            // JSON.stringify(ob) : ob객체를 JSON형식 문자열로 변환한다
+            // JSON.parse(str) : str을 JSON형식 기준으로 객체로 변환한다
+            const ob2 = JSON.parse(JSON.stringify(ob))
+            if(ob.name.includes('블루베리'))    ob2.category = '블루베리'
+            else if(ob.name.includes('딸기'))   ob2.category = '딸기'
+            else if(ob.name.includes('체리'))   ob2.category = '체리'
+            else                                ob2.category = '기타'
+            return ob2
+        })
+
+        const tbody = document.querySelector('tbody')
+        
+        // 원본 데이터 저장
+        const originArr = []
+
+        // 불러온 데이터 출력
+        function loadHandler() {
+            let tag = ''
+            dataList.forEach((product) => {
+                tag += `<tr>`
+                tag += `    <td>${product.name}</td>`
+                tag += `    <td>${product.category}</td>`
+                tag += `    <td>${product.price}</td>`
+                tag += `    <td>${product.grade}</td>`
+                tag += `    <td>${product.salesCount}</td>`
+                tag += `    <td>${product.reviewCount}</td>`
+                tag += `</tr>`
+                originArr.push(product)
+            })
+            tbody.innerHTML += tag   
+        }
+        function checkboxHandler(event) {
+            const boxArray = Array.from(checkboxList)
+            const flag = boxArray.map(box => box.checked)
+            
+            // 필터링
+            const result = originArr.filter((box) => {    
+                const flag1 = box.name.includes("블루베리")
+                const flag2 = box.name.includes("딸기")
+                const flag3 = box.name.includes("체리")
+                const flag4 = !(box.name.includes("블루베리") || box.name.includes("딸기") || box.name.includes("체리"))
+
+                let f = false
+                if(flag[0]) f = f || flag1
+                if(flag[1]) f = f || flag2
+                if(flag[2]) f = f || flag3
+                if(flag[3]) f = f || flag4
+                return f
+            })
+            console.log(result)
+
+            // 화면에 출력
+            let tag = ''
+            result.forEach((product) => {
+                tag += `<tr>`
+                tag += `    <td>${product.name}</td>`
+                tag += `    <td>${product.category}</td>`
+                tag += `    <td>${product.price}</td>`
+                tag += `    <td>${product.grade}</td>`
+                tag += `    <td>${product.salesCount}</td>`
+                tag += `    <td>${product.reviewCount}</td>`
+                tag += `</tr>`
+            })            
+            tbody.innerHTML = ''
+            tbody.innerHTML += tag
+        } 
+
+        const checkboxList = document.querySelectorAll('input[type="checkbox"]')
+        checkboxList.forEach(box => box.onclick = checkboxHandler)
+        window.onload = loadHandler
+
+        
+    </script>
+
+</body>
+</html>

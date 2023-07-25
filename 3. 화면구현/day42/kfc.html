@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kfc</title>
+
+    <style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .df {
+            display: flex;
+        }
+        .sb {
+            justify-content: space-between;
+        }
+        .header_inner {
+            max-width: 1440px;
+            margin: auto;
+            background: url('kfc/kfc_sprite.png');
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+        .logo > a {
+            display: inline-block;
+            background: url('kfc/logo.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 110px;
+            height: 30px;
+        }
+        .nav {
+            margin-right: 320px;
+        }
+        .header_inner > .nav > li {
+            padding: 7px 12px;
+            font-size: 14px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header_inner df sb">
+            <div class="logo">
+                <a href=""></a>
+            </div>
+            <ul class="nav df">
+                <li><a href="">로그인</a></li>
+                <li><a href="">주문내역조회</a></li>
+                <li><a href="">고객센터</a></li>
+                <li><a href="">인재채용</a></li>
+                <li><a href=""><span>0</span></a></li>
+                <li></li>
+            </ul>
+        </div>
+    </header>
+    
+</body>
+</html>
