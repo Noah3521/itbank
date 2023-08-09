@@ -1,0 +1,29 @@
+package youtube;
+
+// MyUtil.convertViewCount(dto.viewCount)
+
+public class MyUtil {
+	
+	public static String convertViewCount(int viewCount) {
+		String result = "";
+		
+		if(viewCount < 1000) {
+			result = String.valueOf(viewCount);
+		}
+		else if(1000 <= viewCount && viewCount < 10000) {
+			result = String.format("%.1f", viewCount / 1000.0);
+			if(result.charAt(result.length() - 1) == '0') {
+				result = result.substring(0, result.length() - 2);
+			}
+			result += "천";
+		}
+		else if(10000 <= viewCount && viewCount < 100000000) {
+			result = viewCount / 10000 + "";
+			result += "만";	
+		}
+		else {
+			result = viewCount / 100000000 + "억";
+		}
+		return result + "회";
+	}
+}
