@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+main {
+	max-width: 1080px;
+	margin: auto;
+}
+
+table {
+	width: 100%;
+	text-align: center;
+}
+
+.idx {
+	width: 10%;
+}
+
+.title {
+	width: 55%;
+}
+
+.writer {
+	width: 15%;
+}
+
+.wdate {
+	width: 20%;
+}
+
+th, td {
+	height: 45px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+th {
+	padding: 2px;
+}
+
+td {
+	padding: 4px 18px 4px 12px;
+}
+
+#board {
+	max-width: 1080px;
+	margin: auto;
+	position: relative;
+}
+
+.btns {
+	width: fit-content;
+	position: absolute;
+	right: 20px;
+	top: 90px;
+}
