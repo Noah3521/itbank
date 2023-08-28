@@ -99,7 +99,7 @@ public class Ex03DAO {
 			e.printStackTrace();
 		} finally {
 			close();
-		}
+		}  
 		return version;
 	}
 	
