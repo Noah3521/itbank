@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+body, h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	border: 1px solid #eee;
+	border-radius: 15px;
+	background-color: lightpink;
+	padding: 10px;	
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	text-align: center;
+}
+
+ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+.frame {
+	max-width: 800px;
+	margin: auto;
+	position: relative;
+}
+
+/* list.jsp */
+#nav {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+}
+
+#nav>li {
+	flex: 1;
+	text-align: center;
+	padding: 15px;
+}
+
+.userInfo {
+	text-align: right;
+	margin: 0;
+}
+
+.searchBox {
+	display: flex;
+	justify-content: center;
+}
+
+/* view.jsp */
+table {
+	width: 100%;
+	text-align: center;
+}
+
+tr {
+	height: 40px;
+}
+
+.title {
+	text-align: left;
+	padding-left: 30px;
+}
+
+.writeBtn {
+	text-align: right;
+}
+
+/* login.jsp */
+.content {
+	border: 1px solid black;
+	margin: 10px 0;
+	white-space: pre-wrap;
+}
+
+.loginForm, .joinForm {
+	margin: 30px auto;
+	width: 350px;
+	height: 350px;
+}
+
+input[name="userid"], input[name="userpw"], input[name="username"],
+	input[name="email"], input[name="birth"], .loginBtn {
+	margin-left: 50px;
+	width: 250px;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+h2 {
+	text-align: center;
+}
+
+/* write.jsp */
+.writeForm, .modifyForm {
+	border: 1px solid #a9a9a9;
+	border-radius: 15px; margin : 30px auto;
+	width: 500px;
+	padding: 20px 10px;
+	box-sizing: border-box;
+	margin: 30px auto;
+}
+
+input[name="title"], textarea[name="content"] {
+	box-sizing: border-box;
+	width: 480px;
+}
+
+input[name="title"] {
+	height: 35px;
+	font-size: 20px;
+}
+
+textarea[name="content"] {
+	height: 300px;
+	font-size: 16px;
+}
+
+.uploadBtn, .modifyBtn {
+	width: 480px;
+	height: 30px;
+	background-color: lightpink;
+	border: 1px solid #eee;
+}
+
+/* login.jsp */
+.joinMsg {
+	position: absolute;
+	bottom: 40%;
+	left: 33%;
+}
+
+.joinBtn {
+	color: #0076c0;
+}
+
+/*member.modify.jsp*/
+.updateBtn, #delUserBtn {
+	display: inline-block;
+	border: 1px solid #eee;
+	border-radius: 15px;
+	background-color: lightpink;
+	margin-left: 50px;
+	width: 125px;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+.updateBtn {
+	font-size: 16px;
+}
+
+#delUserBtn {
+	margin-left: 0;
+	line-height: 30px;
+	text-align: center;
+}
+
+.btns {
+	display: flex;
+}
+
