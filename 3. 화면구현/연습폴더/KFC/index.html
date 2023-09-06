@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        body {
+            height: 200vh;
+        }
+        .static {
+            top: 0;
+            position: sticky;
+            z-index: 25;
+            background-color: white;
+        }
+        .items {
+            top: 0;
+            /* border: 1px solid lightsalmon; */
+            max-width: 1440px;
+            margin: auto;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            background: url(image/kfc_sprite.png);
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+        .items ul {
+            list-style: none;
+        }
+        .category {
+            padding-top: 30px;
+        }
+        .category_list {
+            padding-right: 11.5%;
+        }
+        .logo > a{
+            background-image: url(image/logo.png);
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 110px;
+            height: 30px;
+            margin-left: 40px;
+        }
+        .nav {
+            /* border: 1px solid black; */
+            height: max-content;
+            margin-right: 20rem;
+        }
+        .nav > ul{
+            display: flex;
+            font-size: 14px;
+        }
+        .nav > ul a {
+            padding: 7px 12px 0 12px;
+            position: relative;
+        }
+        .nav > ul li:last-child > a > img{
+            position: absolute;
+            top: -5px;
+            left: 0;
+        }
+        .nav > ul li:last-child > a > span{
+            position: absolute;
+            bottom: -3px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .category {
+            display: block;
+            height: 45px;
+        }
+        .category_list {
+            margin-right: 20rem;
+            display: flex;
+            float: right;
+            list-style: none;
+        }
+        .category_list li {
+            width: 135px;
+            height: 45px;
+            display: flex;
+            align-items:flex-start;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            /* border: 1px solid black; */
+            cursor: pointer;
+        }
+        .address {
+            background-color: #f7f7f7;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .top_frame {
+            width: 1280px;
+            margin: auto;
+        }
+        .address_inner {
+            color: #666;
+            padding: 20px;
+        }
+        .address_inner > p > i {
+            margin: 0 5px;
+        }
+        .mr-15 {
+            margin-right: 15px;
+        }
+        .bt-change {
+            /* background-color: black; */
+            border: 1px solid #666;
+            font-size: 14px;
+            padding: 1.5px 0.5rem;
+            border-radius: 15px;
+        }
+        
+        .top_banner{
+            background-color: #000;
+            background-image: url(image/banner_delivery_pattern.png);
+            background-size: 100%;
+            background-position: center;
+        }
+        .banner_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            position: relative;
+            padding: 50px 20px;
+        }
+        .banner_content > p{
+            font-size: 20px;
+        }
+        .banner_content > h2 {
+            font-size: 60px;
+            line-height: 1;
+            font-weight: 700;
+        }
+        .banner_bike > img {
+            position: absolute;
+            max-height: calc(100% + 60px); /* 최대높이보다 60px 더 크게 */
+            right: 20px;
+            bottom: 0;
+        }
+
+
+        .list {
+            padding: 70px 0 20px;
+        }
+        .swiper {
+            padding: 0 50px;
+            margin: auto;
+        }
+        .swiper_wrap {
+            display: flex;
+            justify-content: center;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            height: 120px;
+            box-sizing: border-box;
+            padding-bottom: 15px;
+            overflow: hidden;
+        }
+        .menu > span{
+            padding-top: 10px;
+            font-size: 12px;
+        }
+        .menu img {
+            width: 80px;
+        }
+        span.img_cover {
+            display: block;
+            height: 81px;
+            width: 81px;
+            overflow: hidden;
+        }
+        .menu:hover span.img_cover > img{
+            margin-top: -6.1rem;
+        }
+
+        .product {
+            /* border: 1px dashed blue; */
+            margin-top: 40px;
+        }
+        .product_container {
+            max-width: 1280px;
+            margin: auto;
+            /* border: 1px dashed coral; */
+        }
+        .col_wrap {
+            display: flex;
+            flex-flow: row wrap;
+            width: calc(100% + 20px);
+            list-style: none;
+            padding: 0 20px;
+            justify-content: flex-start;
+        }
+        .col_wrap > li {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 25%;
+            text-align: center;
+        }
+        .col_wrap > li > a > img {
+            width: 100%;
+            overflow: hidden;
+            transition: all .1s ease;
+        }
+        .col_wrap > li > a > img:hover {
+            transform: scale(1.08);
+        }
+        .order {
+            border: 2px solid black;
+            border-radius: 25px;
+            width: fit-content;
+            padding-left: 10px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+        .basket {
+            display: inline-block;
+            width: 86px;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+        }
+        .basket > img {
+            overflow: hidden;
+        }
+        .go {
+            display: inline-block;
+            font-size: 17px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border: 2px solid black;
+            margin: -2px -2px -2px 0;
+            border-radius: 25px;
+        }
+        .price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 23px;
+        }
+        .msg {
+            margin-bottom: 5px;
+            padding: 10px;
+            color: #666;
+        }
+        h3 {
+            margin-bottom: 6px;
+        }
+        .col_wrap > li{
+            display: inline-block;
+            width: 315px;
+            height: 426px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="static">
+            <div class="items">
+                <div class="logo"><a href=""></a></div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">주문내역조회</a></li>
+                        <li><a href="">고객센터</a></li>
+                        <li><a href="">인재채용</a></li>
+                        <li><a href=""><span>0</span><img src="image/icon_shop_3.png"></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="category">
+                <ul class="category_list">
+                    <li><a href="">DELIVERY</a></li>
+                    <li><a href="">STORE</a></li>
+                    <li><a href="">EVENT</a></li>
+                    <li><a href="">KFC SERVICE</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="address">
+            <div class="address_inner top_frame">
+                <p>배달매장 <i>·</i> <span class="mr-15" style="color: red;">-</span> 주소 <i>·</i> <span>배달을 위해 주소를 검색하셔야 합니다.</span> <a class="bt-change">변경</a></p>
+            </div>
+        </div>
+
+
+    <main>
+        <div id="banner">
+            <div class="top_banner">
+                <div class="banner_content top_frame">
+                    <p>KFC 다양한 메뉴를 배달로 만나세요!</p>
+                    <h2>DELIVERY MENU</h2>
+                    <div class="banner_bike">
+                        <img src="image/banner_delivery_bike.png">
+                    </div>
+                </div>
+            </div>
+            <div class="list">
+                <div class="swiper">
+                    <div class="swiper_wrap">
+                        <div class="menu">
+                            <a href=""><span class="img_cover"><img src="image/dv_mn_new.png"></span></a>
+                            <span>추천메뉴</span>
+                        </div>
+                        <div class="menu">
+                            <a href=""><span class="img_cover"><img src="image/dv_mn_set_chicken.png"></span></a>
+                            <span>치킨&세트</span>
+                        </div>
+                        <div class="menu">
+                            <a href=""><span class="img_cover"><img src="image/dv_mn_set_burger.png"></span></a>
+                            <span>버거&세트</span>
+                        </div>
+                        <div class="menu">
+                            <a href=""><span class="img_cover"><img src="image/dv_mn_side_menu.png"></span></a>
+                            <span>스낵&사이드</span>
+                        </div>
+                        <div class="menu">
+                            <a href=""><span class="img_cover"><img src="image/dv_mn_drink.png"></span></a>
+                            <span>음료</span>
+                        </div>
+                        <div class="menu">
+                            <a href=""><span class="img_cover"><img src="image/db_mn_address.png"></span></a>
+                            <span>주소등록</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+        </style>
+        <div class="product">
+            <div class="product_container">
+                <ul class="col_wrap">
+                    <li>
+                        <a href=""><img src="image/DL_2176185_20230714181556725.png"></a>
+                        <h3     class="title">오리블라버거콤보</h3>
+                        <p class="msg">오리지널블랙라벨+불고기버거+콜라M 게임 이벤트 참여시 익일 50% ...</p>
+                        <p class="price"><span><img src="image/ico_price_red_sm.png"></span>9,600</p>
+                        <div class="order">
+                            <a href="" class="basket"><img src="image/ico-ui_basket_dark.png"></a> 
+                            <a href="" class="go">바로주문</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="image/DL_2176185_20230714181556725.png"></a>
+                        <h3     class="title">오리블라버거콤보</h3>
+                        <p class="msg">오리지널블랙라벨+불고기버거+콜라M 게임 이벤트 참여시 익일 50% ...</p>
+                        <p class="price"><span><img src="image/ico_price_red_sm.png"></span>9,600</p>
+                        <div class="order">
+                            <a href="" class="basket"><img src="image/ico-ui_basket_dark.png"></a> 
+                            <a href="" class="go">바로주문</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="image/DL_2176185_20230714181556725.png"></a>
+                        <h3     class="title">오리블라버거콤보</h3>
+                        <p class="msg">오리지널블랙라벨+불고기버거+콜라M 게임 이벤트 참여시 익일 50% ...</p>
+                        <p class="price"><span><img src="image/ico_price_red_sm.png"></span>9,600</p>
+                        <div class="order">
+                            <a href="" class="basket"><img src="image/ico-ui_basket_dark.png"></a> 
+                            <a href="" class="go">바로주문</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="image/DL_2176185_20230714181556725.png"></a>
+                        <h3     class="title">오리블라버거콤보</h3>
+                        <p class="msg">오리지널블랙라벨+불고기버거+콜라M 게임 이벤트 참여시 익일 50% ...</p>
+                        <p class="price"><span><img src="image/ico_price_red_sm.png"></span>9,600</p>
+                        <div class="order">
+                            <a href="" class="basket"><img src="image/ico-ui_basket_dark.png"></a> 
+                            <a href="" class="go">바로주문</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="image/DL_2176185_20230714181556725.png"></a>
+                        <h3     class="title">오리블라버거콤보</h3>
+                        <p class="msg">오리지널블랙라벨+불고기버거+콜라M 게임 이벤트 참여시 익일 50% ...</p>
+                        <p class="price"><span><img src="image/ico_price_red_sm.png"></span>9,600</p>
+                        <div class="order">
+                            <a href="" class="basket"><img src="image/ico-ui_basket_dark.png"></a> 
+                            <a href="" class="go">바로주문</a>
+                        </div>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+
+
+</body>
+</html>
