@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.itbank.repository.BoardDAO">
+	
+	<select id="getVersion" resultType="String">
+		select banner from v$version
+	</select>
+	
+	<insert id="insert" parameterType="board">
+		insert into board3(title, content, writer, password, filename) values(#{title}, #{content}, #{writer}, #{password}, #{fileName, jdbcType = VARCHAR})
+	</insert>
+	
+	<select id="getMaxIdx" resultType="int">
+		select max(idx) from board3
+	</select>
+	
+	<select id="selectAll" resultType="board" parameterType="hashmap">
+		select * from board3   
+			<if test="query!=null">
+				where instr(title, #{query}) > 0
+			</if>
+		order by idx desc
+		offset
+			#{paging.offset} rows
+		fetch next
+			#{paging.perPage} rows only
+	</select>
+	
+	<select id="selectOne" parameterType="int" resultType="board">
+		select * from board3 where idx = #{idx}
+	</select>
+	
+	<delete id="delete" parameterType="int">
+		delete board3 where idx=#{idx}
+	</delete>
+	
+	<update id="update" parameterType="board">
+		update board3 
+			<set>
+				title=#{title},
+				content=#{content},
+				<if test="fileName != null">
+				filename=#{fileName, jdbcType = VARCHAR}
+				</if>
+			</set>
+		where idx=#{idx}
+	</update>
+	
+	<select id="getBoardCount" parameterType="string" resultType="int">
+		select count(*) from board3 
+			<if test="query!=null">
+				where instr(title, #{query}) > 0
+			</if>
+	</select>
+</mapper>
